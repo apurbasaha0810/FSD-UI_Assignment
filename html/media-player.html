@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+// Media Player using HTML5's Media API
+// 
+// Apurba Saha (557649)
+-->
+<html lang='en'>
+	<head>
+		<meta charset='utf-8' />
+		<title>Media Player using HTML5's Media API</title>
+		<link href='../css/media-player.css' rel='stylesheet' />
+		<script src='../js/media-player.js'></script>
+		<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	</head>
+<body>
+	<h1>Media Player</h1>
+	<div style="width:85%">
+	<div id='media-player'>
+		<video id='media-video' controls>
+			<source src='../videos/VARR9856.mp4' type='video/mp4'>
+			<source src='../videos/VARR9856.webm' type='video/webm'>
+		</video>
+		
+		<div id='media-controls'>
+			<progress id='progress-bar' min='0' max='100' value='0'>0% played</progress>
+			<button id='replay-button' class='replay' title='replay' onclick='replayMedia();'>Replay</button>	
+			<button id='play-pause-button' class='play' title='play' onclick='togglePlayPause();'>Play</button>
+			<button id='stop-button' class='stop' title='stop' onclick='stopPlayer();'>Stop</button>
+			<button id='volume-inc-button' class='volume-plus' title='increase volume' onclick='changeVolume("+");'>Increase volume</button>
+			<button id='volume-dec-button' class='volume-minus' title='decrease volume' onclick='changeVolume("-");'>Decrease volume</button>
+			<button id='mute-button' class='mute' title='mute' onclick='toggleMute("true");'>Mute</button>
+			<div id="likeResult" style="color:#008000;"></div><img src="../images/ThumbsUp.png" onclick="likeCounter()">
+			<div id="unlikeResult" style="color:#FF0000;"></div><img src="../images/ThumbsDown.png" onclick="unlikeCounter()">
+			<input type="hidden" id="videoId" name="videoId" value="videoId0">
+		</div>
+	</div>
+		<div id='media-play-list'>
+			<h2>Play list</h2>
+			<ul id='play-list'>
+				<li><span class='play-item' onclick='loadVideo("../videos/Bear.mp4");updateLikeUnlikeCount("videoId1");'>Bear</span></li>
+				<li><span class='play-item' onclick='loadVideo("../videos/Sample Videos 2.mp4");updateLikeUnlikeCount("videoId2");'>Introduction to Bootstrap 4</span></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
